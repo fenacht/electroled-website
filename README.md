@@ -1,16 +1,28 @@
-# ELECTROLED LLC Website
+# ELECTROLED LLC Website — automatic contact form
 
-Static website ready for GitHub + Cloudflare Pages.
+This version uses a Cloudflare Worker endpoint at `/api/contact` and Resend to email quote requests directly to `support@electroledllc.net`.
 
-## Pages
-- Home: `index.html`
-- Electrical Services: `electrical-services.html`
-- Low Voltage Services: `low-voltage.html`
-- About Us: `about.html`
-- Contact: `contact.html`
+## Required Cloudflare secret
 
-## Deployment on Cloudflare Pages
-Use the repository root as the output directory. No framework or build command is required for this static HTML site.
+Create a Worker secret named:
 
-## Contact form
-The current form opens the visitor's local email application and pre-fills an email to `support@electroledllc.net`. It can later be upgraded to a Cloudflare Pages Function for server-side form delivery.
+`RESEND_API_KEY`
+
+Paste your Resend API key as the value.
+
+## Required Resend sending domain
+
+Add and verify:
+
+`forms.electroledllc.net`
+
+The Worker sends from:
+
+`ELECTROLED Website <website@forms.electroledllc.net>`
+
+Do not enable receiving/MX for this Resend subdomain unless you specifically need it. Your existing `support@electroledllc.net` mailbox remains the destination.
+
+## Site structure
+
+Static files live under `public/`.
+Worker code lives in `src/index.js`.
