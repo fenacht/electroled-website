@@ -26,3 +26,4 @@ Do not enable receiving/MX for this Resend subdomain unless you specifically nee
 
 Static files live under `public/`.
 Worker code lives in `src/index.js`.
+Deployment refresh - September 2026
