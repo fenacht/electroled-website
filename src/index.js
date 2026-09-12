@@ -91,7 +91,7 @@ export default {
         },
         body: JSON.stringify({
           from: "ELECTROLED Website <website@forms.electroledllc.net>",
-          to: ["support@electroledllc.net"],
+          to: ["support@electroledllc.online"],
           reply_to: email,
           subject,
           html: emailHtml,
