@@ -61,3 +61,296 @@ footer{background:#03111e;color:#d8e1e8;padding:46px 0 20px}.footer-grid{display
     height: 30px;
   }
 }
+/* =========================================
+   RECENT PROJECTS CAROUSEL
+   ========================================= */
+
+.projects-section {
+  background: #f7f8fa;
+  overflow: hidden;
+}
+
+.projects-section .section-title {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.projects-section .eyebrow {
+  color: #ff7a00;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.projects-section h2 {
+  margin-top: 8px;
+}
+
+.project-carousel {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #071b2a;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  background: #071b2a;
+}
+
+.project-slide {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.project-slide.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: projectFade 0.45s ease;
+}
+
+.project-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #071b2a;
+}
+
+.project-caption {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+
+  max-width: calc(100% - 48px);
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  background: rgba(5, 24, 40, 0.88);
+  backdrop-filter: blur(4px);
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation arrows */
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  background: rgba(5, 24, 40, 0.88);
+  color: #ffffff;
+
+  font-size: 34px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: #ff7a00;
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+/* Navigation dots */
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #b5bbc1;
+
+  cursor: pointer;
+
+  transition:
+    width 0.25s ease,
+    border-radius 0.25s ease,
+    background 0.25s ease;
+}
+
+.carousel-dot.active {
+  width: 28px;
+  border-radius: 20px;
+
+  background: #ff7a00;
+}
+
+/* Fade animation */
+
+@keyframes projectFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .project-carousel {
+    max-width: 92%;
+    border-radius: 16px;
+  }
+
+  .carousel-track {
+    height: 480px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .projects-section .section-title {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 24px;
+  }
+
+  .projects-section h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .project-carousel {
+    width: calc(100% - 24px);
+    max-width: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 14px;
+  }
+
+  .carousel-track {
+    height: 430px;
+  }
+
+  .project-slide img {
+    object-fit: contain;
+  }
+
+  .project-caption {
+    left: 12px;
+    bottom: 12px;
+
+    max-width: calc(100% - 24px);
+
+    padding: 9px 12px;
+
+    font-size: 14px;
+
+    border-radius: 8px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+
+    font-size: 27px;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .carousel-dots {
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 400px) {
+
+  .carousel-track {
+    height: 360px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+
+    font-size: 24px;
+  }
+
+}
