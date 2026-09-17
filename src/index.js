@@ -91,7 +91,7 @@ export default {
         },
         body: JSON.stringify({
           from: "ELECTROLED Website <website@forms.electroledllc.net>",
-          to: ["support@electroledllc.online"],
+          to: ["support@electroledllc.net"],
           reply_to: email,
           subject,
           html: emailHtml,
@@ -110,7 +110,7 @@ ${message}`
       if (!resendResponse.ok) {
         const details = await resendResponse.text();
         console.error("Resend error:", resendResponse.status, details);
-        return json({ error: "We could not send your request right now. Please call 914 319 2256 or email support@electroledllc.online." }, 502);
+        return json({ error: "We could not send your request right now. Please call 914 319 2256 or email support@electroledllc.net." }, 502);
       }
 
       return json({ ok: true });
